@@ -1,0 +1,39 @@
+{
+  "name": "example-babel-app",
+  "version": "1.0.0",
+  "description": "Babel example",
+  "main": "lib/index.js",
+  "scripts": {
+    "compile": "babel src -d lib",
+    "prepublish": "npm run compile",
+    "test": "nyc mocha --require @babel/register --watch"
+  },
+  "directories": {
+    "lib": "./src",
+    "test": "./test"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-transform-runtime": "^7.13.7",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/register": "^7.9.0",
+    "chai": "^4.3.0",
+    "istanbul": "^0.4.5",
+    "mocha": "latest"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "nyc": "^15.1.0",
+    "ramda": "^0.27.1"
+  },
+  "nyc": {
+    "reporter": [
+      "lcov",
+      "text"
+    ]
+  }
+}
